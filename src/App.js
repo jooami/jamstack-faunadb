@@ -19,9 +19,9 @@ function App() {
   }, []);
 
   return (
-    <div className="container has-text-centered">
+    <div className="container is-centered has-text-centered">
       <div className="columns is-centered">
-        <div className="py-5 column is-half has-text-centered">
+        <div className="py-5 column is-half">
           <h1 className="mb-5 is-size-3 has-text-weight-semibold">
             Links Database
           </h1>
