@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import LinkList from './components/LinkList';
+import LinkForm from './components/LinkForm';
 
 function App() {
+  const [links, setLinks] = useState([]);
+  const loadLinks = async () => {
+    try {
+      const res = await fetch('/api/getLinks');
+      const links = await res.json();
+      setLinks(links);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    loadLinks();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container has-text-centered">
+      <div className="columns is-centered">
+        <div className="py-5 column is-half has-text-centered">
+          <h1 className="mb-5 is-size-3 has-text-weight-semibold">
+            Links Database
+          </h1>
+          <h2 className="my-5 is-size-5 is-uppercase has-text-weight-semibold">
+            Add a Link
+          </h2>
+          <LinkForm />
+          <LinkList links={links} refreshLinks={loadLinks} />
+        </div>
+      </div>
     </div>
   );
 }
