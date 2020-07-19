@@ -39,7 +39,7 @@ export default function LinkForm({ refreshLinks }) {
               Name
             </label>
             <input
-              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal control"
+              className="bg-white focus:outline-none focus:shadow-outline border border-gray-500 rounded-lg py-2 px-4 block w-full appearance-none leading-normal control"
               placeholder="My Favorite Site"
               name="name"
               value={name}
@@ -51,7 +51,7 @@ export default function LinkForm({ refreshLinks }) {
               URL
             </label>
             <input
-              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal control"
+              className="bg-white focus:outline-none focus:shadow-outline border border-gray-500 rounded-lg py-2 px-4 block w-full appearance-none leading-normal control"
               placeholder="https://www.myfavoritesite.com"
               name="url"
               value={url}
@@ -65,7 +65,7 @@ export default function LinkForm({ refreshLinks }) {
             <textarea
               cols="50"
               rows="5"
-              className="resize-x border rounded focus:outline-none focus:shadow-outline control"
+              className="resize-x border border-gray-500 rounded focus:outline-none focus:shadow-outline control"
               placeholder="I love this site because..."
               name="description"
               value={description}

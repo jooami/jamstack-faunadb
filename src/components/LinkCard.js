@@ -28,7 +28,7 @@ export default function LinkCard({ link, refreshLinks }) {
   return (
     <div className="card mb-3">
       <div className="card-header is-size-6">
-        <div className="card-header-title">
+        <div className="card-header-title bg-blue-100">
           <p>{link.name}</p>
         </div>
       </div>
@@ -37,7 +37,7 @@ export default function LinkCard({ link, refreshLinks }) {
         <p>{link.description}</p>
       </div>
       <div className="card-footer">
-        <button className="button is-info my-3 mx-3" onClick={archiveLink}>
+        <button className="button is-warning my-3 mx-3" onClick={archiveLink}>
           Archive
         </button>
         <button className="button is-danger my-3 mx-3" onClick={deleteLink}>
