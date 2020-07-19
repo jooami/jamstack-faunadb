@@ -28,7 +28,7 @@ export default function LinkForm({ refreshLinks }) {
   return (
     <div className="card">
       <div className="card-header">
-        <div className="card-header-title">
+        <div className="card-header-title bg-blue-100">
           <p>Link Info</p>
         </div>
       </div>
@@ -39,26 +39,24 @@ export default function LinkForm({ refreshLinks }) {
               Name
             </label>
             <input
-              size="50"
-              type="text"
+              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal control"
+              placeholder="My Favorite Site"
               name="name"
-              className="control"
               value={name}
               onChange={(e) => setName(e.target.value)}
-            />
+            ></input>
           </div>
           <div className="field">
             <label className="label" htmlFor="url">
               URL
             </label>
             <input
-              size="50"
-              type="text"
+              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal control"
+              placeholder="https://www.myfavoritesite.com"
               name="url"
-              className="control"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-            />
+            ></input>
           </div>
           <div className="field">
             <label className="label" htmlFor="description">
@@ -67,11 +65,12 @@ export default function LinkForm({ refreshLinks }) {
             <textarea
               cols="50"
               rows="5"
+              className="resize-x border rounded focus:outline-none focus:shadow-outline control"
+              placeholder="I love this site because..."
               name="description"
-              className="control"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-            />
+            ></textarea>
           </div>
           <button type="submit" className="button is-success">
             Submit
